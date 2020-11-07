@@ -1,6 +1,11 @@
 
 const translate = require('@vitalets/google-translate-api');
 
+const REDIS_PORT = process.env.PORT || 6379;
+
+// create the redis client
+const client = redis.createClient(REDIS_PORT);
+
 
 const ISO6391 = require('iso-639-1');
 // console.log(ISO6391.getName('en')); 
@@ -13,6 +18,9 @@ module.exports.translateText= function(req,res){
 
     translate(req.body.text, {to: language}).then(response => {
             console.log(response.text);
+
+            // Set data to Redis
+            client.setex(req.body.text, 3600, response.text);
         
             console.log(`translated to ${req.body.language}`,response.from.language.iso);
             return res.json(200, {
