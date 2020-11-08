@@ -5,6 +5,8 @@ const client = redis.createClient(REDIS_PORT);
 
 const ISO6391 = require('iso-639-1');
 
+
+// middleware for cache
 module.exports.cache=function (req, res, next) {
   
   let languageCode= ISO6391.getCode(req.body.language);
