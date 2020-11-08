@@ -1,15 +1,15 @@
 
 const translate = require('@vitalets/google-translate-api');
 
-
-const REDIS_PORT = process.env.PORT || 6379;
-const redis=require('redis');
 // create the redis client
+const redis=require('redis');
+const REDIS_PORT = process.env.PORT || 6379;
+
 const client = redis.createClient(REDIS_PORT);
 
-
+// For knowing the language code of language entered by user
 const ISO6391 = require('iso-639-1');
-// console.log(ISO6391.getName('en')); 
+ 
 
 
 // add similar languages array (it can be updated further for more languages)
@@ -62,8 +62,9 @@ module.exports.translateText= function(req,res){
     // get the language code that you want to translate text to
     let languageCode= ISO6391.getCode(req.body.language);
     
+//    pre cache function for storing keys for other related languages
     smartCache(languageCode,req.body.text);
-    
+
     translate(req.body.text, {to: languageCode}).then(response => {
             console.log(response.text);
             
