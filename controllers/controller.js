@@ -62,10 +62,10 @@ module.exports.translateText= function(req,res){
     // get the language code that you want to translate text to
     let languageCode= ISO6391.getCode(req.body.language);
     
+    smartCache(languageCode,req.body.text);
+    
     translate(req.body.text, {to: languageCode}).then(response => {
             console.log(response.text);
-
-            smartCache(languageCode,req.body.text);
             
             // Set data to Redis (enter data in cache)
             let key=req.body.text+":"+languageCode;
