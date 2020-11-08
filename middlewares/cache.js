@@ -3,8 +3,13 @@ const redis=require('redis');
 // create the redis client
 const client = redis.createClient(REDIS_PORT);
 
+const ISO6391 = require('iso-639-1');
+
 module.exports.cache=function (req, res, next) {
-    let key=req.body.text+":"+req.body.language;
+  
+  let languageCode= ISO6391.getCode(req.body.language);
+  
+  let key=req.body.text+":"+languageCode;
     
     client.get(key, (err, data) => {
       if (err) throw err;
