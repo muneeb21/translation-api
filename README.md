@@ -8,7 +8,7 @@ A design of an API for translation of text to any particular language the user w
 
 **Setup the API**
 > Fireup the Redis server on PORT 6379<br/>
-> Run npm start<br/>
+> Run npm start (In VSC terminal)<br/>
 
 **Theme of the API**
 - Translates text<br/>
@@ -36,6 +36,15 @@ A design of an API for translation of text to any particular language the user w
 
 **Screenshots**
 
-![alt text](https://github.com/muneeb21/college-details/blob/master/clientpart/screenshots/ss1.png?raw=true)<br/>
+![alt text](https://github.com/muneeb21/translation-api/blob/master/screenshots/ss3.png?raw=true)<br/>
 
-![alt text](https://github.com/muneeb21/college-details/blob/master/clientpart/screenshots/ss2.png?raw=true)<br/>
+- Repeated hot for same text<br/>
+![alt text](https://github.com/muneeb21/translation-api/blob/master/screenshots/ss4.png?raw=true)<br/>
+
+**Example for pre-caching**
+
+![alt text](https://github.com/muneeb21/translation-api/blob/master/screenshots/ss1.png?raw=true)<br/>
+
+- Pre-caching</br>
+
+![alt text](https://github.com/muneeb21/translation-api/blob/master/screenshots/ss2.png?raw=true)<br/>
