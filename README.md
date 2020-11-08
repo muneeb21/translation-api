@@ -38,13 +38,13 @@ A design of an API for translation of text to any particular language the user w
 
 ![alt text](https://github.com/muneeb21/translation-api/blob/master/screenshots/ss3.png?raw=true)<br/>
 
-- Repeated hot for same text<br/>
+**Repeated hit for same text**
 ![alt text](https://github.com/muneeb21/translation-api/blob/master/screenshots/ss4.png?raw=true)<br/>
 
 **Example for pre-caching**
 
 ![alt text](https://github.com/muneeb21/translation-api/blob/master/screenshots/ss1.png?raw=true)<br/>
 
-- Pre-caching</br>
+**Pre-caching**
 
 ![alt text](https://github.com/muneeb21/translation-api/blob/master/screenshots/ss2.png?raw=true)<br/>
